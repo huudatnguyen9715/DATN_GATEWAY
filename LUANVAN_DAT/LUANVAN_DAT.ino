@@ -69,14 +69,12 @@ String PH_temp ;
 String DO_temp ;
 
 const char* ssid     = "BeHome NHT";
-//  const char* ssid     = "DO PHUONG LAU 2 2.4Ghz";
 
 const char* password = "0968377014behome";
-// const char* password = "0353782881";
 
-//const char* host = "trinhSERVER_TAbk.hostingerapp.com";
+//const char* host = "trinhDATN_SERVERbk.hostingerapp.com";
 // char* host = "192.168.1.9";
- char* host = "192.168.1.5";
+ char* host = "192.168.1.12";
 
 const int httpPort = 80;
 WiFiClient client;
@@ -344,8 +342,8 @@ if (!client.connect(host, httpPort)) {
     return;
   }
 
- // String url1 = "/SERVER_TA/temp/includes/write_temp.php?temp=" + String(temp) ; // localhost
-  String url1 = "/SERVER_TA_2/hum/includes/write_hum.php?humidity=" + String(temp_x) ; // localhost
+ // String url1 = "/DATN_SERVER/temp/includes/write_temp.php?temp=" + String(temp) ; // localhost
+  String url1 = "/DATN_SERVER/hum/includes/write_hum.php?humidity=" + String(temp_x) ; // localhost
 
 //  Serial.print(temp_x);
 // 
@@ -371,8 +369,8 @@ if (!client.connect(host, httpPort)) {
     return;
   }
 
- // String url1 = "/SERVER_TA/temp/includes/write_temp.php?temp=" + String(temp) ; // localhost
-  String url2 = "/SERVER_TA_2/hum/includes/write_hum.php?humidity=" + String(humidity_air_x) ; // localhost
+ // String url1 = "/DATN_SERVER/temp/includes/write_temp.php?temp=" + String(temp) ; // localhost
+  String url2 = "/DATN_SERVER/hum/includes/write_hum.php?humidity=" + String(humidity_air_x) ; // localhost
 
 //  Serial.print(humidity_air_x);
 // 
@@ -397,8 +395,8 @@ if (!client.connect(host, httpPort)) {
     return;
   }
 
- // String url1 = "/SERVER_TA/temp/includes/write_temp.php?temp=" + String(temp) ; // localhost
-  String url3 = "/SERVER_TA_2/hum4/includes/write_hum.php?humidity=" + String(humidity_soil_x) ; // localhost
+ // String url1 = "/DATN_SERVER/temp/includes/write_temp.php?temp=" + String(temp) ; // localhost
+  String url3 = "/DATN_SERVER/hum4/includes/write_hum.php?humidity=" + String(humidity_soil_x) ; // localhost
     
 //  Serial.print(humidity_soil_x);
 // 
@@ -423,8 +421,8 @@ if (!client.connect(host, httpPort)) {
     return;
   }
 
- // String url1 = "/SERVER_TA/temp/includes/write_temp.php?temp=" + String(temp) ; // localhost
-  String url4 = "/SERVER_TA_2/hum3/includes/write_hum.php?humidity=" + String(lux_x) ; // localhost
+ // String url1 = "/DATN_SERVER/temp/includes/write_temp.php?temp=" + String(temp) ; // localhost
+  String url4 = "/DATN_SERVER/hum3/includes/write_hum.php?humidity=" + String(lux_x) ; // localhost
 
 //  Serial.print(lux_x);
 // 
@@ -456,8 +454,8 @@ if (client.connected()) {
 //    return;
 //  }          
 //   
-//  // String request = "/SERVER_TA/pc/ajax/pin_status_device.php?" ; //+ String(pin_27);
-//    String request = "/SERVER_TA/pc/ajax/pin_status_device.php?" ;  
+//  // String request = "/DATN_SERVER/pc/ajax/pin_status_device.php?" ; //+ String(pin_27);
+//    String request = "/DATN_SERVER/pc/ajax/pin_status_device.php?" ;  
 //    
 //      client.print(String("GET ") + request + " HTTP/1.1\r\n" +
 //               "Host: " + host + "\r\n" + 
@@ -472,8 +470,8 @@ void pinStatus() {
     return;
   }          
    
-  // String request = "/VILUAN/pc/ajax/pin_status_device.php?" ; localhost
-    String request = "/SERVER_TA_2/pc/ajax/pin_status_device.php?" ;   // domain
+  // String request = "/DATN_SERVER/pc/ajax/pin_status_device.php?" ; localhost
+    String request = "/DATN_SERVER/pc/ajax/pin_status_device.php?" ;   // domain
     
       client.print(String("GET ") + request + " HTTP/1.1\r\n" +
                "Host: " + host + "\r\n" + 
